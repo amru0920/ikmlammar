@@ -1,0 +1,311 @@
+/* main */
+:root {
+    --body-color: #0b0e11;
+    --sidebar-color: #15191c;
+    --primary-color: #aca674;
+    --card-bg: #1c2126;
+    --text-color: #e4e6eb;
+    --text-muted: #b0b3b8;
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex; /* Supports the sidebar + main content layout */
+}
+
+/* navbar */
+/* --- SIDEBAR BASE STATE --- */
+.sidebar-nav {
+    position: fixed;
+    width: 60px; /* Base width */
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    transition: var(--transition-smooth);
+    z-index: 100; /* Keeps it above the 3D flip cards */
+}
+
+/* --- HOVER EXPANSION --- */
+.sidebar-nav:hover {
+    width: 240px; /* Expanded width */
+}
+
+/* --- NAVIGATION LINKS --- */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.navbar li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+    white-space: nowrap;        /* Prevents text from wrapping during expansion */
+    transition: var(--transition-fast);   /* Uses your 0.3s ease */
+}
+
+.navbar li a:hover {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+}
+
+/* Styling for the Active Link */
+.navbar li a.active {
+    background-color: var(--card-bg);     /* Uses your #1c2126 */
+    color: var(--primary-color);          /* Uses your #aca674 */
+    border-left: 4px solid var(--primary-color); /* The vertical marker */
+    font-weight: bold;                    /* Per lab guide requirements */
+}
+
+/* Ensure the icon changes color too */
+.navbar li a.active .icon {
+    color: var(--primary-color);
+}
+
+.icon {
+    min-width: 30px;            /* Ensures icon stays visible when closed */
+    font-size: 1.2rem;
+}
+
+.link-text {
+    margin-top: auto; /* Pushes this element to the bottom of the card */
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+.text {
+    margin-left: 20px;
+    opacity: 0;                 /* Hidden text by default */
+    transition: opacity 0.3s;
+}
+
+.sidebar-nav:hover .text {
+    opacity: 1;                 /* Reveal text on hover */
+}
+
+/* 1. The Wrapper: This keeps the 'hit area' consistent */
+.sidebar-nav ul li .icon {
+    width: 24px;          /* Set the width of the icon container */
+    height: 24px;         /* Set the height to match */
+    display: flex;        /* Centering the img inside */
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;   /* Space between icon and text */
+    flex-shrink: 0;       /* Prevents the circle from squashing */
+}
+
+/* 2. The Image: This does the actual resizing */
+.icon img {
+    width: 100%;          /* Fills the 24px width of the container */
+    height: 100%;         /* Fills the 24px height */
+    object-fit: contain;  /* Ensures the icon shape stays natural */
+    display: block;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    /* This filter changes black icons to your Gold/Tan color */
+    filter: invert(72%) sepia(17%) saturate(621%) hue-rotate(15deg) brightness(91%) contrast(85%);
+    
+    transition: filter 0.3s ease; /* Makes the color change smooth */
+    
+}
+
+/* Change color to white (or brighter) when hovering */
+.sidebar-nav ul li a:hover .icon img {
+    filter: brightness(0) invert(1); 
+}
+
+/* --- MAIN CONTENT ADJUSTMENT --- */
+.main-content {
+    margin-left: 60px;          /* Space for the narrow sidebar */
+    padding: 40px;
+    background-color: var(--body-color);
+    min-height: 100vh;
+}
+.front, .back {
+    backface-visibility: hidden; /* Essential for 3D flip stability */
+    background-color: var(--card-bg);
+    border-radius: 15px;
+}
+
+/* Main Content: Fills remaining horizontal space */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background: var(--body-color);
+    transition: var(--transition-slow);
+}
+
+/* --- 3. UI COMPONENTS --- */
+
+/* Sidebar Profile Image */
+.image img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* View Switcher Controls */
+.controls {
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    padding: 12px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: var(--transition-fast);
+}
+
+/* Hidden checkbox that powers the view toggle logic */
+#viewToggle {
+    display: none;
+}
+
+.toggle-button {
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: var(--transition-fast);
+}
+
+/* --- 4. CARD SYSTEM (DEFAULT: GRID VIEW) --- */
+.card-container {
+    display: grid;
+    /* auto-fill creates as many columns as will fit, at least 250px wide each */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px;
+    transition: var(--transition-smooth);
+}
+
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #2d333b;
+    text-decoration: none;
+    
+    /* Use flex to push the "Check it out!" link to the bottom automatically */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 200px; /* Instead of aspect-ratio, use min-height for flexibility */
+    
+    transition: var(--transition-smooth);
+}
+
+.card-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: bold; /* Requirement */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 { margin-bottom: 8px; }
+.card p { color: var(--text-muted); }
+
+/* --- 5. VIEW SWITCHER LOGIC (LIST VIEW) --- */
+
+/* When checkbox is checked: Change Grid to Column */
+#viewToggle:checked ~ .card-container {
+    grid-template-columns: 1fr; /* Forces exactly one column for List View */
+    gap: 15px;
+}
+
+/* Reformat card style for List View */
+#viewToggle:checked ~ .card-container .card {
+    display: flex;
+    flex-direction: row;        /* Side-by-side layout */
+    justify-content: space-between; /* Pushes content to left and link to right */
+    align-items: center;
+    text-align: left;
+    height: auto;
+    min-height: 80px;           /* Slimmer profile for list view */
+    padding: 10px 30px;
+}
+
+#viewToggle:checked ~ .card-container .card .link-text {
+    margin-top: 0;              /* Remove the top margin used in Grid View */
+    flex-grow: 1;               /* Allows the element to occupy space */
+    text-align: right;          /* Forces text to the right */
+    color: var(--primary-color);
+    font-weight: bold;          /* Per lab requirements */
+}
+
+/* Visual feedback for the toggle button */
+#viewToggle:checked ~ .controls .toggle-button {
+    background: #2c3e50;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#viewToggle:checked ~ .card-container .card .card-content {
+    flex-basis: 70%;            /* Keeps the title and description on the left */
+}
+
+/* Rotate icon in button if using FontAwesome */
+#viewToggle:checked ~ .controls .toggle-button i {
+    transform: rotate(180deg);
+}
+
+/* --- 6. ANIMATIONS --- */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered entrance for list items */
+#viewToggle:checked ~ .card-container .card:nth-child(2) { animation-delay: 0.1s; }
+#viewToggle:checked ~ .card-container .card:nth-child(3) { animation-delay: 0.2s; }
+#viewToggle:checked ~ .card-container .card:nth-child(4) { animation-delay: 0.3s; }
+
+/* --- THE TOGGLE LOGIC --- */
+
+/* 1. Switch Container from Multi-column to Single-column */
+#viewToggle:checked ~ .card-container {
+    grid-template-columns: 1fr; /* This forces the List view */
+    gap: 10px;
+}
+
+/* 2. Morph the Card Shape */
+#viewToggle:checked ~ .card-container .card {
+    aspect-ratio: auto;      /* Allows the card to flatten */
+    height: 80px;            /* Gives it a list-item height */
+    flex-direction: row;     /* Side-by-side layout */
+    justify-content: flex-start;
+    padding: 10px 30px;
+    text-align: left;
+}
+
+/* 3. Smooth out the text transition */
+#viewToggle:checked ~ .card-container .card h3 {
+    margin-bottom: 0;
+    margin-right: 15px;
+}

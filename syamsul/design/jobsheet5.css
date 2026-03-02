@@ -1,0 +1,175 @@
+/*Main code for work*/
+
+html, body, header, footer, hgroup, nav, article, section, figure, figcaption, h1,
+h2, h3, ul, li, body, div, p, img {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    margin-top: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #333333;
+    font-size: 14px;
+    background-image: url('../work_sheet/img/data_background16K.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.42857143;
+}
+
+header, main, footer {
+    width: 900px;
+    border: grey solid 0.5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*instruction to work*/
+
+/*header*/
+
+h1 {
+    font-size: 4em;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+.divtopheader {
+    padding: 0.5rem 0;
+    background-color: #222222;
+    color: #777777;
+    text-align: right;
+}
+
+.topheader {
+    color: #777777;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.topheaderrow {
+    background-color: #f8f8f8;
+    border: grey solid 1px;
+    padding: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+/*Main*/
+
+h2 {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+}
+
+hr {
+    width: 875px;
+    border: #999999 solid 0.5px;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    margin-left: 1rem;
+    width: 60%;
+    text-align: left;
+}
+
+.termsLink {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+#fancyBtn {
+    background-color: #bddbfa;
+    width: 150px;
+    height: 50px;
+}
+
+table th label {
+    font-weight: bold;
+}
+
+#rate {
+    font-size: 1rem;
+}
+
+table td input {
+    width: 60%;
+}
+
+#firstName, #lastName {
+    width: 150px;
+}
+
+#password, #passwordRepeat {
+    width: 150px;
+}
+
+#email {
+    width: 300px;
+}
+
+.radio {
+    display: flex;
+    width: 120px;
+}
+
+.radio input {
+    width: 20px;
+}
+
+#r1 {
+    display: flex;
+    flex-direction: column;
+}
+
+#address {
+    width: 240px;
+}
+
+#state {
+    width: 70px;
+}
+
+#zip {
+    width: 90px;
+}
+
+#country {
+    width: 100px;
+}
+
+#birthDate {
+    width: 150px;
+}
+
+#favouriteColor {
+    width: 100px;
+}
+
+/*footer*/
+footer {
+    background-color: #222222;
+    color: #777777;
+    text-align: center;
+    padding: 1rem 0;
+}

@@ -1,0 +1,185 @@
+/*Main code for work*/
+
+html, body, header, footer, hgroup, nav, article, section, figure, figcaption, h1,
+h2, h3, ul, li, body, div, p, img {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    margin-top: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #333333;
+    font-size: 14px;
+    background-image: url('../work_sheet/img/data_background16K.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 1.42857143;
+}
+
+header, main, footer {
+    width: 900px;
+    border: grey solid 0.5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*instruction to work*/
+
+/*header*/
+
+h1 {
+    font-size: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: black;   
+}
+
+.divtopheader {
+    padding: 0.5rem 0;
+    background-color: #222222;
+    color: #777777;
+    text-align: right;
+}
+
+.topheader {
+    color: #777777;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.topheaderrow {
+    background-color: #f8f8f8;
+    border: grey solid 1px;
+    padding: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+/*Main*/
+
+.link {
+    text-decoration: underline;
+    color: blue;
+}
+
+h2 {
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+p {
+    margin-left: 1rem;
+}
+
+/*section 1*/
+
+.section1 {
+    display: flex;
+    background-color: #f8f8f8;
+}
+
+#img1 {
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: block;
+}
+.rtx {
+    width: 300px;
+    margin: 1rem ;
+}
+
+#p1 {
+    margin-left: -0.1rem;
+    margin-right: 1rem;
+}
+
+#addbox {
+    display: flex;
+    border: #777777 solid 0.5px;
+    margin-right: 1rem;
+}
+
+#addbox button {
+    margin: 0.5rem;
+    border: #777777 solid 1px;
+    width: 260px;
+    height: 50px;
+    color: blue;
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+#line1 {
+    width: 550px;
+    margin-right: 18px;
+    border: #777777 solid 0.5px;
+}
+
+table th {
+    text-align: left;
+    padding-right: 1rem;
+}
+
+/*section2*/
+
+.section2 {
+    background-color: #f8f8f8;
+}
+
+#line2 {
+    margin-top: -0.1rem;
+    margin-bottom: 1rem;
+    width: 880px;
+    border: #777777 solid 0.5px;
+}
+
+#box2 {
+    margin-top: 5rem;
+}
+
+#box3 {
+    display: flex;
+}
+
+.imgdetail img {
+    width: 135px;
+    height: 135px;
+}
+
+#product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #777777 solid 0.5px;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+#product a {
+    text-decoration: underline;
+    color: blue;
+}
+
+/*footer*/
+footer {
+    background-color: #222222;
+    color: #777777;
+    text-align: center;
+    padding: 1rem 0;
+}
