@@ -4,6 +4,10 @@ body {
     background: #E6E9F2; /* Warna kelabu cair latar belakang */
 }
 
+h1 {
+    font-family: "Brush Script MT", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 /* HEADER - Biru Ungu seperti dalam gambar */
 header {
     background: #3F51B5;

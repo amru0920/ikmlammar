@@ -18,63 +18,77 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
-  width: 900px;
+  width: 920px;
   margin: 0 auto;
-  border: 1px solid #666666;
-  background-color: #ffffff;
-}
-
-h1 {
-  font-size: 4em;
-  font-weight: bold;
-}
-
-main figure p {
+  border: 1px solid rgba(102, 102, 102, 0.3);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  position: relative;
+  z-index: 10;
+  border-radius: 8px;
   margin-top: 10px;
-  font-style: italic;
-  color: #030303;
-  text-align: left;
-  font-weight: bold;
 }
 
-/* Top Header Row */
+/* Top Header Row - untuk My Account, Wish List, Shopping Cart, Checkout */
 #topHeaderRow {
-  background-color: #222222;
-    font-size: 0.9em;
-    height: 3em;
-    text-align: right;
-    line-height: 3em;
-    padding-right: 2em;
+  background-color: rgba(34, 34, 34, 0.75);
+  font-size: 0.9em;
+  height: 3em;
+  text-align: right;
+  line-height: 3em;
+  padding-right: 2em;
+  border-radius: 8px 8px 0 0;
 }
 
 #topHeaderRow a {
- color: #999999;
-    margin-left: 2em;
-    text-decoration: none;
-    font-size: 0.95em;
+  color: #ffffff;
+  margin-left: 2em;
+  text-decoration: none;
+  font-size: 0.95em;
 }
 
-/* Navigation */
+#topHeaderRow a:hover {
+  color: #ff6b6b;
+}
+
+/* Navigation - untuk Home, About Us, Art Works, Artists */
 #mainNavigationRow {
+  background-color: rgba(231, 231, 231, 0.85);
   color: #999999;
-    margin-left: 0em;
-    text-decoration: none;
-    font-size: 0.95em;
-    background-color: #e7e7e7;
+  margin-left: 0em;
+  text-decoration: none;
+  font-size: 0.95em;
+  padding: 15px 0;
+  border-radius: 0 0 8px 8px;
 }
 
 #mainNavigationRow a {
-  color: #777777;
+  color: #333333;
   font-weight: bold;
-  margin-left: 1em;
-  margin-right: 2em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
   text-decoration: none;
 }
 
+#mainNavigationRow a:hover {
+  color: #ff6b6b;
+}
+
+/* Header h1 styling */
+header h1 {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: left;
+  color: #333333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
 /* Main */
 main {
-  width: 880px;
+  width: 900px;
   margin: 0em auto;
   background-color: #ffffff;
   padding: 10px;
@@ -245,7 +259,7 @@ hr {
 /* Footer */
 footer {
   clear: left;
-  width: 900px;
+  width: 920px;
   height: 3em;
   margin: 0em auto 0 auto;
   border: 1px solid #666666;

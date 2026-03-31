@@ -1,86 +1,117 @@
-
-/* style.css untuk Lab 09 */
+/* --- GANTIKAN SEMUA KOD DI DALAM style.css DENGAN KOD INI --- */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F5F5F5;
-    margin: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
-h1 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-table {
-    width: 900px;
-    border-collapse: collapse;
-    background-color: #FFFDF2; /* Warna krim lembut seperti dlm gambar */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* HEADER JADUAL - Warna Oren */
-thead tr {
-    background-color: #F2711C; /* Warna oren terang  */
-    color: white;
+h2 {
     text-align: left;
+    margin-bottom: 20px;
+    max-width: 800px; /* Samakan lebar tajuk dengan jadual */
+    margin: 0 auto 20px auto; 
+    text-transform: uppercase;
+}
+
+/* --- KAWAL SAIZ & REKA BENTUK JADUAL --- */
+table {
+    width: 100%;
+    max-width: 800px; /* Jadikan jadual lebih padat (fit) macam Gambar 1 */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 th, td {
     padding: 15px;
-    border-bottom: 1px solid #E0E0E0;
+    border: 1px solid #ddd;
 }
 
-/* GAYA GAMBAR PRODUK */
-td img {
+th {
+    background-color: #f39c12; /* Warna oren header */
+    color: #fff;
+    font-weight: normal;
+}
+
+/* --- PENJAJARAN TEKS (KIRI & KANAN) --- */
+/* Tajuk lajur */
+th:nth-child(1) { text-align: left; }
+th:nth-child(2), th:nth-child(3), th:nth-child(4) { text-align: right; }
+
+/* Isi jadual */
+td.product-name {
+    text-align: left; /* Teks produk ke kiri */
+    color: #555;
+}
+
+td.quantity, td.price, td.amount {
+    text-align: right; /* Semua nombor ke kanan */
+    color: #555;
+}
+
+/* --- GAMBAR KASUT --- */
+td.product-image {
+    padding: 0; /* Buang ruang kosong supaya gambar muat petak */
+    width: 80px;
+}
+
+td.product-image img {
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border: 1px solid #ddd;
     display: block;
 }
 
-/* PENJAJARAN TEKS (Alignment) */
-.center {
+/* --- BUTANG KUANTITI --- */
+.quantity input {
+    width: 30px;
     text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
 }
 
-.right {
-    text-align: right;
+button {
+    padding: 2px 8px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ccc;
 }
 
-/* BAHAGIAN TOTALS (FOOTER) */
-tfoot tr {
-    background-color: #FFFDF2;
+button:hover {
+    background-color: #ddd;
+}
+
+/* --- BAHAGIAN FOOTER (KIRAAN) --- */
+tfoot {
+    background-color: #FFFAF0; /* Warna krim macam Gambar 1 */
+}
+
+tfoot td {
+    border-bottom: none; /* Buang garisan bawah */
+    border-left: none;   /* Buang garisan kiri */
+    border-right: none;  /* Buang garisan kanan */
+    padding: 8px 15px;
+}
+
+tfoot tr:first-child td {
+    border-top: 1px solid #ddd; /* Hanya letak garisan atas Subtotal */
 }
 
 .totals td:first-child {
     text-align: right;
-    font-weight: normal;
-    color: #666;
+    color: #777;
+    font-size: 0.9em;
 }
 
 .totals td:last-child {
     text-align: right;
+    color: #777;
 }
 
-/* GRAND TOTAL - Teks Merah & Tebal */
-.grand-total {
+.grand-total td {
+    color: #E74C3C !important; /* Tukar warna Grand Total jadi merah */
     font-weight: bold;
-}
-
-.grand-total td:first-child {
-    color: #B03060; /* Warna merah gelap [cite: 187] */
-}
-
-.grand-total td:last-child {
-    color: #B03060;
-}
-
-/* Kesan Hover pada Baris */
-tbody tr:hover {
-    background-color: #FFF9E6;
+    font-size: 1.1em;
 }

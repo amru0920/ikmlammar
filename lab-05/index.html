@@ -1,180 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Running Shoes Store - Customer Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Shoes - Customer Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="top-nav-bar">
+    <div class="top-nav-container">
+        <a href="#">My Account</a> 
+        <a href="#">Wish List</a> 
+        <a href="#">Shopping Cart</a> 
+        <a href="#">Checkout</a>
+    </div>
+</div>
+
+<div class="container">
     <header>
-        <div id="topHeaderRow">
-            <a href="#">My Account</a>
-            <a href="#">Wish List</a>
-            <a href="#">Shopping Cart</a>
-            <a href="#">Checkout</a>
-        </div>
-
-        <h1>Running Shoes Store </h1>
-
-        <div id="mainNavigationRow">
-            <a href="/ammar/lab-04/index.html">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Art Works</a>
-            <a href="#">Artists</a>
-        </div>
+        <h1>Squash Racket</h1>
     </header>
 
-    <main>
-        <h2>Customer Registration</h2>
+    <nav class="main-nav">
+        <a href="#">Home</a> 
+        <a href="#">About Us</a> 
+        <a href="#">Product</a> 
+        <a href="#">Software</a>
+    </nav>
 
-        <!-- ========== SECTION 1: USER INFO ========== -->
+    <h2>Customer Registration</h2>
+
+    <form>
         <h3>1. User Info</h3>
-        
-        <!-- First Name & Last Name (Sebelah) -->
-        <div class="two-column">
-            <div>
-                <div class="field-label">First Name</div>
-                <input type="text" placeholder="First name">
-            </div>
-            <div>
-                <div class="field-label">Last Name</div>
-                <input type="text" placeholder="Last name">
-            </div>
-        </div>
-
-        <!-- Email -->
         <div class="form-row">
-            <div class="field-label">Email</div>
-            <input type="email" placeholder="email@example.com">
-            <span class="helper-text">format for email is xxx@yyy.zzz</span>
-        </div>
-
-        <!-- Password & Password Repeat (Sebelah) -->
-        <div class="two-column">
-            <div>
-                <div class="field-label">Password</div>
-                <input type="password" placeholder="Password">
-                <span class="helper-text">at least 8 characters</span>
+            <div class="form-group half-width">
+                <label>First Name</label>
+                <input type="text">
             </div>
-            <div>
-                <div class="field-label">Password Repeat</div>
-                <input type="password" placeholder="Repeat password">
-                <span class="helper-text">at least 8 characters</span>
+            <div class="form-group half-width">
+                <label>Last Name</label>
+                <input type="text">
             </div>
         </div>
 
-        <hr>
+        <div class="form-row">
+            <div class="form-group full-width">
+                <label>Email</label>
+                <input type="email" placeholder="example@email.com">
+            </div>
+        </div>
 
-        <!-- ========== SECTION 2: LOCATION ========== -->
+        <div class="form-row">
+            <div class="form-group half-width">
+                <label>Password</label>
+                <input type="password" placeholder="at least 8 characters">
+            </div>
+            <div class="form-group half-width">
+                <label>Password Repeat</label>
+                <input type="password" placeholder="at least 8 characters">
+            </div>
+        </div>
+
         <h3>2. Location</h3>
-
-        <!-- Address (Sorangan) -->
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="full-width">
+        </div>
+        
         <div class="form-row">
-            <div class="field-label">Address</div>
-            <input type="text" placeholder="Street address">
+            <div class="form-group flex-2">
+                <label>City</label>
+                <input type="text">
+            </div>
+            <div class="form-group flex-1">
+                <label>State</label>
+                <input type="text">
+            </div>
+            <div class="form-group flex-1">
+                <label>Zip</label>
+                <input type="text">
+            </div>
         </div>
 
-        <!-- City, State, Zip (Sebelah bertiga) -->
-        <div class="three-column">
-            <div>
-                <div class="field-label">City</div>
-                <input type="text" placeholder="City">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" placeholder="+60123456789">
             </div>
-            <div>
-                <div class="field-label">State</div>
-                <input type="text" placeholder="State">
-            </div>
-            <div>
-                <div class="field-label">Zip</div>
-                <input type="text" placeholder="Zip code">
-            </div>
-        </div>
-          <!-- Phone & Country (Sebelah) -->
-        <div class="two-column">
-            <div>
-                <div class="field-label">Phone</div>
-                <input type="tel" placeholder="NN-NN-NN-NNNN">
-                <span class="helper-text">NN-NN-NN-NNNN</span>
-            </div>
-            <div>
-                <div class="field-label">Country</div>
+            <div class="form-group">
+                <label>Country</label>
                 <select>
-                    <option selected>Canada ▼</option>
-                    <option>USA</option>
-                    <option>UK</option>
-                    <option>Australia</option>
+                    <option>Malaysia</option>
+                    <option>United States</option>
+                    <option>Canada</option>
                 </select>
             </div>
         </div>
 
-        <!-- Continent (Bullet Point Ke Bawah) -->
+        <div class="form-group">
+            <label>Continent</label>
+            <div class="radio-group"><input type="radio" name="continent"> Asia</div>
+            <div class="radio-group"><input type="radio" name="continent"> Europe</div>
+            <div class="radio-group"><input type="radio" name="continent"> North America</div>
+        </div>
+
+        <h3>3. Personal Details</h3>
         <div class="form-row">
-            <div class="field-label">Continent</div>
-            <div class="radio-group-vertical">
-                <label><input type="radio" name="continent" checked> North America</label>
-                <label><input type="radio" name="continent"> Europe</label>
-                <label><input type="radio" name="continent"> South America</label>
+            <div class="form-group">
+                <label>Birth Day</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label>Favorite Running Shoe</label>
+                <input type="color" class="color-picker">
             </div>
         </div>
 
-    
-
-        <hr>
-
-        <!-- ========== SECTION 3: PERSONAL DETAILS ========== -->
-     <!-- ========== SECTION 3: PERSONAL DETAILS ========== -->
-<h3>3. Personal Details</h3>
-
-<!-- Birth Day & Favorite Color (Sebelah) -->
-<div class="two-column">
-    <!-- Birth Day -->
-    <div>
-        <div class="field-label">Birth Day</div>
-        <input type="date" placeholder="mm/dd/yyyy">
-        <span class="helper-text">mm/dd/yyyy</span>
-    </div>
-    
-    <!-- Favorite Color -->
-    <div>
-        <div class="field-label">Favorite Color</div>
-        <div class="color-picker">
-            <input type="color" value="#ff3366">
-        </div>
-    </div>
-</div>
-
-
-
-        <!-- Interest In Art -->
-        <div class="form-row">
-            <div class="field-label">Interest In Art</div>
-            <input type="range" min="0" max="100" value="20" style="width: 100%;">
-            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+        <div class="form-group">
+            <label>Interest In Running Shoes</label>
+            <div class="range-container">
                 <span>Minimal</span>
+                <input type="range" min="1" max="100" class="flex-1">
                 <span>Love it!</span>
             </div>
         </div>
 
-        <hr>
-
-        <!-- ========== SECTION 4: ALL DONE ========== -->
-      <!-- ========== SECTION 4: ALL DONE ========== -->
-<h3>4. All Done</h3>
-
-<!-- Checkbox dengan link biru -->
-<div class="form-row">
-    <label class="checkbox-label">
-        <input type="checkbox"> I agree to the <a href="#" class="terms-link">Terms of the Site</a>
-    </label>
+        <h3>4. All Done</h3>
+        <div class="form-group">
+            <label class="font-normal">
+                <input type="checkbox"> I agree to the <a href="#">Terms of the Site</a>
+            </label>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            <span class="check-icon">✓</span> Sign me up!
+        </button>
+    </form>
 </div>
 
-<!-- Sign up button (style baru) -->
-<button class="signup-btn-new">✅Sign me up!</button>
+<footer>
+    Copyright &copy; 2026 Muhammad Ammar Bin Mahadir.
+</footer>
 
-    </main>
-
-    <footer>
-        All images are copyright to their owners. This is just a hypothetical site © 2014 Copyright Art Store
-    </footer>
 </body>
 </html>

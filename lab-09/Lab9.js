@@ -1,13 +1,30 @@
-const tax_rate = 0.10;
-const shipping_threshold = 1000;
-var subtotal = 0;
+// Lab9.js
+const cart = document.getElementById('cart');
 
-for (var i=0; i<titles.length; i++) {
-    let total = calculateTotal(quantities[i], prices[i]);
-    subtotal += total;
-    outputCartRow(filenames[i], titles[i], quantities[i], prices[i], total);
-}
+// Event delegation untuk butang + dan -
+cart.addEventListener('click', (e) => {
+    if(e.target.classList.contains('plus') || e.target.classList.contains('minus')){
+        const input = e.target.parentElement.querySelector('input');
+        let value = parseInt(input.value) || 0;
+        
+        if(e.target.classList.contains('plus')){
+            value++;
+        } else if(e.target.classList.contains('minus') && value > 0){
+            value--;
+        }
+        
+        input.value = value;
+        updateCart(); // Panggil fungsi dari function.js
+    }
+});
 
-var tax = calculateTax(subtotal, tax_rate);
-var shipping = calculateShipping(subtotal, shipping_threshold);
-var grand = calculateGrandTotal(subtotal, tax, shipping);
+// Event untuk input manual (taip sendiri nombor)
+cart.addEventListener('input', (e) => {
+    if(e.target.tagName === 'INPUT'){
+        if(e.target.value < 0 || e.target.value === "") e.target.value = 0;
+        updateCart();
+    }
+});
+
+// Jalankan kiraan awal apabila fail dibuka
+updateCart();
