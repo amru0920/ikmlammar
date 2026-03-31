@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0a306cb1c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Add to Cart - Kedai Kacang</title>
+    <h1 class="h1"> Kedai Kacang MAMU</h1>
+</head>
+<body>
+    <div class="utama">
+        <div class="pertama">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Barang</th>
+                        <th>Harga</th>
+                        <th>Tindakan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kacang Tanah</td>
+                        <td>RM 10.00</td>
+                        <td>
+                            <button class="beli" onclick="tambahData({nama: 'Kacang Tanah', harga: 10.00})">
+                                <i class="fa-solid fa-cart-arrow-down"></i> beli
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kacang Hijau</td>
+                        <td>RM 12.00</td>
+                        <td>
+                            <button class="beli" onclick="tambahData({nama: 'Kacang Hijau', harga: 12.00})">
+                                <i class="fa-solid fa-cart-arrow-down"></i> beli
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kacang Merah</td>
+                        <td>RM 12.00</td>
+                        <td>
+                            <button class="beli" onclick="tambahData({nama: 'Kacang Merah', harga: 12.00})">
+                                <i class="fa-solid fa-cart-arrow-down"></i> beli
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kacang Cerdik</td>
+                        <td>RM 15.00</td>
+                        <td>
+                            <button class="beli" onclick="tambahData({nama: 'Kacang Cerdik', harga: 15.00})">
+                                <i class="fa-solid fa-cart-arrow-down"></i> beli
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="kedua">
+            <div id="senarai-troli">
+                <p style="padding: 20px; color: gray;">Troli kosong...</p>
+            </div>
+            
+            <div class="jumlah">
+                <p>Jumlah Keseluruhan</p>
+                <div>
+                    <p class="bold" id="total-harga">RM 0.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

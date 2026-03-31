@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 8 - JavaScript Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Edit Art Work Details</h2>
+    
+    <form id="mainForm" action="#">
+        <div class="row">
+            <label>Title</label>
+            <input type="text" name="title" class="required hilightable">
+        </div>
+
+        <div class="row">
+            <label>Description</label>
+            <textarea name="description" class="required hilightable"></textarea>
+        </div>
+
+        <div class="flex-row">
+            <div class="left-col">
+                <div class="row">
+                    <label>Genre</label>
+                    <select name="genre">
+                        <option>Choose genre</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>Subject</label>
+                    <select name="subject">
+                        <option>Choose subject</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>Medium</label>
+                    <input type="text" name="medium" class="hilightable">
+                </div>
+                <div class="row">
+                    <label>Year</label>
+                    <input type="text" name="year" class="required hilightable">
+                </div>
+                <div class="row">
+                    <label>Museum</label>
+                    <input type="text" name="museum" class="hilightable">
+                </div>
+            </div>
+
+            <div class="right-col">
+                <fieldset>
+                    <legend>Type</legend>
+                    <input type="radio" name="type" checked> Painting<br>
+                    <input type="radio" name="type"> Sculpture
+                </fieldset>
+
+                <fieldset>
+                    <legend>Image Creative Commons Specification</legend>
+                    <input type="checkbox"> Attribution<br>
+                    <input type="checkbox"> Noncommercial<br>
+                    <input type="checkbox"> No Derivative Works<br>
+                    <input type="checkbox"> Share Alike
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <input type="submit" value="Submit" class="btn-submit">
+            <input type="reset" value="Clear Form" class="btn-clear">
+        </div>
+    </form>
+</div>
+
+<script>
+    // Determine if a field is blank [cite: 86]
+    function isBlank(inputField) {
+        if (inputField.value == "") {
+            return true;
+        }
+        return false;
+    }
+
+    // remove all error styles from the div passed in [cite: 86]
+    function makeClean(element) {
+        element.classList.remove("error");
+    }
+
+    // Wait until the page is loaded, before doing any DOM stuff [cite: 86]
+    window.addEventListener("load", function() {
+
+        // add listeners for classes with hilightable [cite: 86]
+        var hilightableInputs = document.querySelectorAll(".hilightable");
+        for (var i = 0; i < hilightableInputs.length; i++) {
+            hilightableInputs[i].addEventListener("focus", function(e) {
+                e.target.classList.toggle("highlight");
+            });
+            hilightableInputs[i].addEventListener("blur", function(e) {
+                e.target.classList.toggle("highlight");
+            });
+        }
+
+        // add listeners for classes with required ... [cite: 86]
+        var requiredInputs = document.querySelectorAll(".required");
+        for (var i = 0; i < requiredInputs.length; i++) {
+            requiredInputs[i].addEventListener("change", function(e) {
+                makeClean(e.target);
+            });
+        }
+
+        // on submitting the form, "empty" checks are performed on required inputs [cite: 86]
+        var mainForm = document.getElementById("mainForm");
+        mainForm.addEventListener("submit", function(e) {
+            var requiredInputs = document.querySelectorAll(".required");
+            for (var i = 0; i < requiredInputs.length; i++) {
+                if (isBlank(requiredInputs[i])) {
+                    e.preventDefault(); // Menghalang borang dihantar jika kosong [cite: 86]
+                    requiredInputs[i].classList.add("error");
+                } else {
+                    makeClean(requiredInputs[i]);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

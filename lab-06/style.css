@@ -1,0 +1,266 @@
+/* ========== RESET STYLES ========== */
+html, body, header, footer, hgroup, nav, article, section, 
+figure, figcaption, h1, h2, h3, ul, li, div, p, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+/* ========== TAMBAH BORDER PADA PAGE ========== */
+body {
+    border: 2px solid #cccccc;        /* Border kelabu di sekeliling page */
+    border-radius: 10px; 
+    justify-content: center;              /* Sudut melengkung */
+    padding: 30px;                      /* Ruang dalam supaya content tak melekat pada border */
+    max-width: 800px;                    /* Lebar maksimum */
+    margin: 30px auto;                    /* Tengah page */
+    background-color: #ffffff;            /* Background putih */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Bayangan untuk efek timbul */
+}
+
+/* ========== TAMBAH BORDER PADA SETIAP SECTION ========== */
+section, aside {
+    border: 1px solid #dddddd;           /* Border nipis untuk section dan aside */
+    border-radius: 8px;                   /* Sudut melengkung */
+    padding: 20px;                         /* Ruang dalam */
+    margin-bottom: 20px;                   /* Jarak antara section */
+    background-color: #fafafa;             /* Background sedikit kelabu */
+}
+
+/* ========== TAMBAH BORDER PADA NAVIGATION BOXES ========== */
+.nav-primary ul, .nav-secondary ul {
+    border: 1px solid #aaaaaa;            /* Border untuk group navigation */
+    border-radius: 8px;                    /* Sudut melengkung */
+    overflow: hidden;                       /* Supaya border mengikut rounded children */
+}
+
+/* ========== TAMBAH BORDER PADA HEADER ========== */
+header {
+    border-bottom: 2px solid #cccccc;      /* Border bawah header */
+    padding-bottom: 20px;                   /* Ruang bawah */
+    margin-bottom: 20px;                    /* Jarak dengan content */
+}
+
+/* ========== TAMBAH BORDER PADA FOOTER ========== */
+footer {
+    border-top: 2px solid #cccccc;          /* Border atas footer */
+    padding-top: 20px;                       /* Ruang atas */
+    margin-top: 20px;                        /* Jarak dengan content */
+    text-align: center;                       /* Teks tengah */
+}
+
+/* ========== BODY STYLES ========== */
+body {
+    background-color: #dddddd;           /* Background kelabu */
+    color: #222222;                       /* Warna teks */
+    font-family: Helvetica, Arial, sans-serif;  /* Font Helvetica */
+    font-size: 14px;                       /* Saiz font 14px */
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* ========== HEADER STYLES ========== */
+header {
+    width: 100%;
+}
+
+/* ========== HEADING LEVEL 1 ========== */
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== HYPERLINK INSIDE H1 ========== */
+h1 a {
+    background-color: #cccccc;             /* Background kelabu */
+    border-bottom: 1px solid #666666;       /* Border bawah 1px solid #666 */
+    color: #222222;                          /* Warna font */
+    font-size: 20px;                          /* Saiz font 20px */
+    font-weight: bold;                         /* Tebal */
+    text-align: center;                         /* Tengah */
+    text-decoration: none;                       /* Tiada underline */
+    padding: 10px 0;                              /* Padding atas/bawah 10px, kiri/kanan 0 */
+    text-shadow: 0 1px 1px #ffffff;               /* Bayangan teks: horizontal 0, vertical 1px, blur 1px, warna putih */
+    background-image: linear-gradient(#cccccc, #999999);  /* Gradient dari #ccc ke #999 */
+    display: block;                                  /* Display as block */
+    width: 100%;
+}
+
+/* ========== LIST INSIDE HEADER ========== */
+header ul {
+    list-style: none;                        /* Tiada bullet */
+    margin: 10px;                              /* Margin 10px */
+    padding: 0;
+}
+
+/* ========== HYPERLINK INSIDE LIST ========== */
+header li a {
+    background-color: #ffffff;                 /* Background putih */
+    border: 1px solid #999999;                  /* Border solid 1px #999 */
+    font-size: 17px;                             /* Saiz font 17px */
+    font-weight: bold;                            /* Tebal */
+    text-decoration: none;                         /* Tiada underline */
+    margin-bottom: -1px;                             /* Margin bottom -1px (overlap border) */
+    padding: 12px 10px;                               /* Padding atas/bawah 12px, kiri/kanan 10px */
+    display: block;                                    /* Display block */
+    color: #222222;                                     /* Warna teks */
+}
+
+/* ========== FIRST HYPERLINK (ABOUT) - TOP CORNERS ROUNDED ========== */
+header li:first-child a {
+    border-top-left-radius: 8px;                /* Kiri atas rounded 8px */
+    border-top-right-radius: 8px;                /* Kanan atas rounded 8px */
+}
+
+/* ========== LAST HYPERLINK (CONTACT) - BOTTOM CORNERS ROUNDED ========== */
+header li:last-child a {
+    border-bottom-left-radius: 8px;              /* Kiri bawah rounded 8px */
+    border-bottom-right-radius: 8px;              /* Kanan bawah rounded 8px */
+}
+
+/* ========== HOVER EFFECT FOR LINKS ========== */
+header li a:hover {
+    background-color: #eeeeee;                    /* Background berubah bila hover */
+    border-color: #666666;
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+    padding: 10px;                                /* Padding 10px untuk main */
+}
+
+/* ========== NAV INSIDE MAIN (Lectures, Charity Work, Quotes) ========== */
+main nav ul {
+    list-style: none;                              /* Tiada bullet */
+    margin: 10px 0;                                 /* Margin */
+    padding: 0;
+    display: flex;                                   /* Flexbox untuk sebaris */
+    gap: 10px;                                        /* Jarak antara link */
+}
+
+main nav li a {
+    background-color: #ffffff;                        /* Background putih */
+    border: 1px solid #999999;                         /* Border */
+    font-size: 16px;                                    /* Saiz font */
+    font-weight: bold;                                   /* Tebal */
+    text-decoration: none;                                /* Tiada underline */
+    padding: 8px 15px;                                     /* Padding */
+    display: inline-block;                                  /* Inline block */
+    color: #222222;                                         /* Warna teks */
+    border-radius: 5px;                                      /* Sudut rounded 5px */
+}
+
+main nav li a:hover {
+    background-color: #eeeeee;                               /* Hover effect */
+    border-color: #666666;
+}
+
+/* ========== SECTION STYLES ========== */
+section {
+    padding: 10px;                                   /* Padding 10px */
+    background-color: #f5f5f5;                       /* Background sedikit kelabu */
+    border: 1px solid #cccccc;                        /* Border */
+    margin-bottom: 15px;                               /* Margin bawah */
+    border-radius: 5px;                                 /* Sudut rounded */
+}
+
+/* ========== ASIDE STYLES ========== */
+aside {
+    padding: 10px;                                   /* Padding 10px */
+    background-color: #f5f5f5;                       /* Background sedikit kelabu */
+    border: 1px solid #cccccc;                        /* Border */
+    border-radius: 5px;                                /* Sudut rounded */
+}
+
+/* ========== HEADING LEVEL 2 ========== */
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+/* ========== FIGURE STYLES ========== */
+figure {
+    text-align: left;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+figure img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;                              /* Gambar bulat */
+    border: 2px solid #999999;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555555;
+}
+
+/* ========== FOOTER - DISPLAY NONE ========== */
+footer {
+    display: none;                                    /* Footer tak nampak */
+}
+
+/* ========== PARAGRAPH STYLES ========== */
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+/* ========== NAVIGATION SPLIT 3-3 ========== */
+.nav-group {
+    display: flex;
+    flex-direction: column;  /* Susun ke bawah: group 1 atas, group 2 bawah */
+    gap: 5px;                /* Jarak antara dua group */
+}
+
+.nav-primary ul, .nav-secondary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Setiap link dalam kedua-dua group */
+.nav-primary li a, .nav-secondary li a {
+    display: block;
+    padding: 12px 15px;
+    background-color: #dddddd;
+    color: #222222;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #bbbbbb;
+}
+
+/* Hover effect */
+.nav-primary li a:hover, .nav-secondary li a:hover {
+    background-color: #cccccc;
+}
+
+/* Group 1 - 3 link pertama */
+.nav-primary li:first-child a {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.nav-primary li:last-child a {
+    border-bottom: 1px solid #bbbbbb;  /* Border biasa, tak rounded */
+}
+
+/* Group 2 - 3 link kedua */
+.nav-secondary li:first-child a {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.nav-secondary li:last-child a {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}

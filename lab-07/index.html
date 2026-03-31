@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Share Your Travels - Lab 7</title>
+    <script src="lab-08/lab8.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Share Your Travels</h1>
+            <span class="menu-icon">☰</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <figure id="featured">
+            <img src="gambar1.jpeg" alt="Castle" title="Penang Bridge">
+            <figcaption>Penang Bridge</figcaption>
+        </figure>
+
+        <div id="thumbnails">
+            <img src="gambar1.jpeg" alt="Castle" title="Penang Bridge">
+            <img src="gambar6.jpeg" alt="City" title="Second Penang Bridge">
+            <img src="gambar3.jpeg" alt="Sea" title="City View">
+            <img src="gambar8.jpeg" alt="Ruins" title="Mural Art">
+            <img src="gambar7.jpeg" alt="Church" title="Sea View">
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener("load", function() {  
+
+    var thumbs = document.getElementById("thumbnails"); 
+
+    thumbs.addEventListener("click", function (e) { 
+
+        if (e.target.nodeName.toLowerCase() == 'img') { 
+
+            var clickedImageSource = e.target.src;    
+
+            var newSrc = clickedImageSource.replace("small", "medium");             
+
+            var featuredImage = document.querySelector("#featured img"); 
+
+            featuredImage.src = newSrc;  
+
+            featuredImage.title = e.target.title; 
+        }
+    }); 
+
+    var featured = document.getElementById("featured"); 
+
+    featured.addEventListener("mouseover", function (e) { 
+
+        var caption = document.querySelector("#featured figcaption"); 
+
+        caption.style.transition = "opacity 1.5s"; 
+        caption.style.opacity = 0.80;         
+
+        caption.innerHTML = document.querySelector("#featured img").title; 
+    }); 
+
+    featured.addEventListener("mouseout", function (e) {    
+
+        var caption = document.querySelector("#featured figcaption"); 
+
+        caption.style.transition = "opacity 1.5s"; 
+        caption.style.opacity = 0; 
+    });
+
+});
+</script>
+</body>
+</html>
